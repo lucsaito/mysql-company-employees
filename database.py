@@ -31,9 +31,22 @@ class database(object):
             else:
                 print(err)
 
-    def remove_table(self):
-        pass
+
+    def remove_table(self, table_name):
+        try:
+            self.cursor.execute("DROP TABLE {};".format(table_name))
+            print("Table \"{}\" removed.".format(table_name))
+        except mysql.Error as err:
+            print(err)
+
+
     def show_tables(self):
+        self.cursor.execute('SHOW TABLES;')
+        tables = self.cursor.fetchall()
+        for table in tables:
+            print(table[0])
+
+    def add_to_table(self):
         pass
 
 
