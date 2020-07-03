@@ -3,6 +3,10 @@ import datetime
 
 """
 | NAME | SURNAME | EMAIL | CELLNUMB | CREATED |
+
+db.showtables()
+db.create_table(name, [(col, type)])
+
 """
 
 class Company(object):
@@ -37,6 +41,18 @@ if __name__ == "__main__":
         }
     db = database(config['host'], config['user'],
                   config['pass'], config['db'])
+
+    a = datetime.datetime.now()
+    x = a - datetime.timedelta(microseconds=a.microsecond)
+    db.show_head()
+    """"
+    db.add_to_table('USERS', ['NAME', 'SURNAME', 'EMAIL', 'CELLNUMB', 'CREATED'],
+                    ['rtnrt', 'cnfgnrt', 'erthb', 'etgwr', str(x)])"""
+
+
+
+
+
     """
     Creating table "USERS":
     table_name = "USERS"
