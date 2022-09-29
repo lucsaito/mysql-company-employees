@@ -14,10 +14,6 @@ class Company(object):
         pass
     def add_employee(self):
         pass
-    def remove_employee(self):
-        pass
-    def search_employee(self):
-        pass
     def last_employees_created(self):
         pass
 class Employee(object):
@@ -60,8 +56,6 @@ if __name__ == "__main__":
                ('EMAIL', 'TEXT'), ('CELLNUMB', 'TEXT'),
                ('CREATED', 'DATETIME')]
     db.create_table(table_name, columns)
-    
-    
     ####### create a new table ########
     db.create_table("teste", columns)     <-- (String, [Tuples])
     
